@@ -108,7 +108,7 @@ const SideBar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../public/images/profile.jpg`}
+                  src={`/images/profile.jpg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -118,11 +118,15 @@ const SideBar = () => {
                   variant="h2"
                   color={colors.grey[100]}
                   fontWeight="bold"
+                  textAlign="center"
                   sx={{ m: "10px 0 0 0" }}
                 >
                   WF
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
+                <Typography 
+                  variant="h5" 
+                  textAlign="center"
+                  color={colors.greenAccent[500]}>
                   SDE 3
                 </Typography>
               </Box>
