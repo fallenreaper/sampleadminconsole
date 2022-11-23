@@ -22,16 +22,16 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined"
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
-const Item = ( obj: {
-  title: string,
-  to: string,
-  icon: any ,
-  selected: string,
-  setSelected: Function 
+const Item = (obj: {
+  title: string;
+  to: string;
+  icon: any;
+  selected: string;
+  setSelected: Function;
 }) => {
-  const { title, to, icon, selected, setSelected } = obj
+  const { title, to, icon, selected, setSelected } = obj;
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -123,10 +123,11 @@ const SideBar = () => {
                 >
                   WF
                 </Typography>
-                <Typography 
-                  variant="h5" 
+                <Typography
+                  variant="h5"
                   textAlign="center"
-                  color={colors.greenAccent[500]}>
+                  color={colors.greenAccent[500]}
+                >
                   SDE 3
                 </Typography>
               </Box>
@@ -135,7 +136,7 @@ const SideBar = () => {
 
           {/* Listed Items */}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-          <Item
+            <Item
               title="Dashboard"
               to="/"
               icon={<HomeOutlinedIcon />}
@@ -236,7 +237,6 @@ const SideBar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
           </Box>
         </Menu>
       </Sidebar>
