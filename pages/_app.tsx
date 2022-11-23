@@ -8,6 +8,7 @@ import createEmotionCache from "../utilities/createEmotionCache";
 import TopBar from "../components/topbar";
 import SideBar from "../components/sidebar";
 import { ProSidebarProvider} from "react-pro-sidebar"
+import { useState } from "react";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -17,6 +18,7 @@ interface MyAppProps extends AppProps {
 
 export default function App(props: MyAppProps) {
   const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
     <ProSidebarProvider>
@@ -28,11 +30,11 @@ export default function App(props: MyAppProps) {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <div className="app">
-              <SideBar />
-              <div className="content">
+              <SideBar/>
+              <main className="content">
                 <TopBar />
                 <Component {...pageProps} />
-              </div>
+              </main>
             </div>
           </ThemeProvider>
         </ColorModeContext.Provider>
