@@ -34,9 +34,6 @@ const Item = (obj: {
   return (
     <MenuItem
       active={selected === title}
-      style={{
-        color: colors.grey[100],
-      }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
@@ -62,18 +59,21 @@ const SideBar = () => {
         "& .pro-sidebar-wrapper": {
           backgroundColor: "transparent !important",
         },
-        "& .pro-inner-item": {
+        "& .menu-anchor": {
           padding: "5px 35px 5px 20px !important",
         },
-        "& .pro-inner-item:hover": {
+        "& .menu-anchor:hover": {
           color: "#868dfb !important",
         },
-        "& .pro-menu-item.active": {
+        "& .menu-item.active": {
           color: "#6870fa !important",
         },
       }}
     >
-      <Sidebar defaultCollapsed={isCollapsed} backgroundColor={colors.primary[400]}>
+      <Sidebar 
+        defaultCollapsed={isCollapsed} 
+        backgroundColor={colors.primary[400]}
+        >
         <Menu>
           {/* Logo and Menu Icon */}
           <MenuItem
@@ -88,7 +88,7 @@ const SideBar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
+                <Typography variant="h3" color={colors.grey[900]}>
                   ADMINIS
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -114,7 +114,7 @@ const SideBar = () => {
               <Box textAlign="center">
                 <Typography
                   variant="h2"
-                  color={colors.grey[100]}
+                  color={colors.grey[900]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
@@ -142,7 +142,7 @@ const SideBar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={colors.grey[700]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Data
@@ -171,7 +171,7 @@ const SideBar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={colors.grey[700]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
@@ -200,7 +200,7 @@ const SideBar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={colors.grey[700]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Charts
