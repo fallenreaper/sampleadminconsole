@@ -1,10 +1,8 @@
 import { useState } from "react";
 import {
   Sidebar,
-  ProSidebarProvider,
   Menu,
   MenuItem,
-  useProSidebar,
 } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import Link from "next/link";
@@ -16,7 +14,6 @@ import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlinedIcon from "@mui/icons-material/HelpOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
@@ -44,6 +41,7 @@ const Item = (obj: {
       icon={icon}
     >
       <Typography>{title}</Typography>
+      {/* <Link href={to}></Link> */} {/* [TODO]  I will need to have some sort of link here to connect to different parts of the app, but i need to recall how to do this. */}
     </MenuItem>
   );
 };
@@ -75,7 +73,7 @@ const SideBar = () => {
         },
       }}
     >
-      <Sidebar defaultCollapsed={isCollapsed}>
+      <Sidebar defaultCollapsed={isCollapsed} backgroundColor={colors.primary[400]}>
         <Menu>
           {/* Logo and Menu Icon */}
           <MenuItem
@@ -86,7 +84,7 @@ const SideBar = () => {
             {!isCollapsed && (
               <Box
                 display="flex"
-                justifyContent="center"
+                justifyContent="space-between"
                 alignItems="center"
                 ml="15px"
               >
@@ -113,19 +111,17 @@ const SideBar = () => {
                 />
               </Box>
 
-              <Box>
+              <Box textAlign="center">
                 <Typography
                   variant="h2"
                   color={colors.grey[100]}
                   fontWeight="bold"
-                  textAlign="center"
                   sx={{ m: "10px 0 0 0" }}
                 >
                   WF
                 </Typography>
                 <Typography
                   variant="h5"
-                  textAlign="center"
                   color={colors.greenAccent[500]}
                 >
                   SDE 3

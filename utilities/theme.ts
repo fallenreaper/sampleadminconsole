@@ -79,7 +79,7 @@ export const tokens = (mode : string) => ({
         100: "#040509",
         200: "#080b11",
         300: "#0c101a",
-        400: "#f2f0f0",
+        400: "#1F2A40",
         500: "#141b2b",
         600: "#434955",
         700: "#727680",
@@ -163,7 +163,7 @@ export const themeSettings = ( mode: any ) => {
         }
       })
     },
-    topography: {
+    typography: {
       fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
