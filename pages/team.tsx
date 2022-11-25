@@ -57,14 +57,13 @@ export default function Teams() {
               backgroundColor:
                 data.row.access === "admin"
                   ? colors.greenAccent[600]
-                  : colors.greenAccent[700]
-              
+                  : colors.greenAccent[700],
             }}
           >
             {data.row.access === "admin" && <AdminPanelSettingsOutlinedIcon />}
             {data.row.access === "manager" && <SecurityOutlinedIcon />}
             {data.row.access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ml: "5px"}}>
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
               {data.row.access}
             </Typography>
           </Box>
@@ -81,25 +80,25 @@ export default function Teams() {
         height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
-            border: "none"
+            border: "none",
           },
           "& .MuiDataGrid-cell": {
-            borderBottom: "none"
+            borderBottom: "none",
           },
           "& .name-column--cell": {
-            color: colors.greenAccent[700]
+            color: colors.greenAccent[700],
           },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[300],
-            borderBottom: "none"
+            borderBottom: "none",
           },
           "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400]
+            backgroundColor: colors.primary[400],
           },
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
-            backgroundColor: colors.blueAccent[300]
-          }
+            backgroundColor: colors.blueAccent[300],
+          },
         }}
       >
         <DataGrid rows={mockDataTeam} columns={columns} />
