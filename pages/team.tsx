@@ -101,7 +101,8 @@ export default function Teams() {
           },
         }}
       >
-        <DataGrid rows={mockDataTeam} columns={columns} />
+        {/* Checkbox Selection currently doesnt do anything, but i may link it to download selected data? */}
+        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
       </Box>
     </Box>
   );
