@@ -79,7 +79,7 @@ const SideBar = () => {
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-            style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
+            style={{ margin: "10px 0 20px 0", color: colors.grey[900] }}
           >
             {!isCollapsed && (
               <Box
