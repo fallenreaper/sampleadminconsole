@@ -86,11 +86,11 @@ export default function Contacts() {
             backgroundColor: colors.blueAccent[300],
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${colors.grey[100]} !important`
+            color: `${colors.grey[900]} !important`
           }
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataContacts} columns={columns} />
+        <DataGrid checkboxSelection rows={mockDataContacts} columns={columns} components={{ Toolbar: GridToolbar}}  />
       </Box>
     </Box>
   );
