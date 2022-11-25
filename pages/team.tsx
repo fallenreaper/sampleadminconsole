@@ -87,10 +87,10 @@ export default function Teams() {
             borderBottom: "none"
           },
           "& .name-column--cell": {
-            color: colors.greenAccent[300]
+            color: colors.greenAccent[700]
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[300],
             borderBottom: "none"
           },
           "& .MuiDataGrid-virtualScroller": {
@@ -98,7 +98,7 @@ export default function Teams() {
           },
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
-            backgroundColor: colors.blueAccent[700]
+            backgroundColor: colors.blueAccent[300]
           }
         }}
       >

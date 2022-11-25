@@ -9,8 +9,8 @@ const Header = ( data: { title: string, subtitle: string}) => {
 
   return (
     <Box mb="30px">
-      <Typography variant="h2" color={colors.grey[100]} fontWeight="bold" sx={{mb: "5px"}}>{data.title.toUpperCase()}</Typography>
-      <Typography variant="h5" color={colors.greenAccent[400]}>{data.subtitle}</Typography>
+      <Typography variant="h2" color={colors.grey[900]} fontWeight="bold" sx={{mb: "5px"}}>{data.title.toUpperCase()}</Typography>
+      <Typography variant="h5" color={colors.greenAccent[600]}>{data.subtitle}</Typography>
     </Box>
   )
 }
