@@ -27,8 +27,13 @@ const Item = (obj: {
   const { title, to, icon, selected, setSelected } = obj;
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  /*
+  [TODO]   Adding the Link as a wrapper to the MenuItem, will create a Hydration Error for react/link and MenuItem.
+  I will need to do more searching.  The Error will deferr to clientside rendering and pretty much recognizes that the Client and Server Templates are out of sync.
+  
+  */
   return (
-    <Link href={to} style={{ color: colors.grey[900], textDecoration: "none" }}>
+    <Link href={to} passHref style={{ color: colors.grey[900], textDecoration: "none" }}>
       <MenuItem
         active={selected === title}
         onClick={() => setSelected(title)}
