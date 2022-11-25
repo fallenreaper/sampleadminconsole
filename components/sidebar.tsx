@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-} from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import Link from "next/link";
 import { tokens } from "../utilities/theme";
@@ -32,14 +28,15 @@ const Item = (obj: {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <MenuItem
-      active={selected === title}
-      onClick={() => setSelected(title)}
-      icon={icon}
-    >
-      <Typography>{title}</Typography>
-      {/* <Link href={to}></Link> */} {/* [TODO]  I will need to have some sort of link here to connect to different parts of the app, but i need to recall how to do this. */}
-    </MenuItem>
+    <Link href={to} style={{ color: colors.grey[900], textDecoration: "none" }}>
+      <MenuItem
+        active={selected === title}
+        onClick={() => setSelected(title)}
+        icon={icon}
+      >
+        <Typography>{title}</Typography>
+      </MenuItem>
+    </Link>
   );
 };
 
@@ -48,15 +45,14 @@ const SideBar = () => {
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-  // const { collapseSidebar, toggleSidebar, collapsed, toggled, broken, rtl } = useProSidebar();
 
   return (
     <Box
       sx={{
-        "& .pro-sidebar-inner": {
+        "& .sidebar-inner": {
           background: `${colors.primary[400]} !important`,
         },
-        "& .pro-sidebar-wrapper": {
+        "& .sidebar": {
           backgroundColor: "transparent !important",
         },
         "& .menu-anchor": {
@@ -70,10 +66,10 @@ const SideBar = () => {
         },
       }}
     >
-      <Sidebar 
-        defaultCollapsed={isCollapsed} 
+      <Sidebar
+        defaultCollapsed={isCollapsed}
         backgroundColor={colors.primary[400]}
-        >
+      >
         <Menu>
           {/* Logo and Menu Icon */}
           <MenuItem
@@ -120,10 +116,7 @@ const SideBar = () => {
                 >
                   WF
                 </Typography>
-                <Typography
-                  variant="h5"
-                  color={colors.greenAccent[500]}
-                >
+                <Typography variant="h5" color={colors.greenAccent[500]}>
                   SDE 3
                 </Typography>
               </Box>
