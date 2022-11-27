@@ -24,24 +24,21 @@ export default function Calendar() {
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
   const handleDateClick = (selected: any) => {
-    console.log("Selected: ", typeof selected, selected)
     const title = prompt("Enter the Title for your new Event");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
     if (title) {
-      const obj = {
+      calendarApi.addEvent({
         id: `${selected.startStr}-${title}`,
         title,
         start: selected.startStr,
         end: selected.endStr,
         allDay: selected.allDay,
-      }
-      calendarApi.addEvent(obj)
+      });
     }
   };
 
   const handleEventClick = (selected: any) => {
-    console.log("Handle Event Click Info: ", typeof selected, selected)
     if (
       window.confirm(
         `Are you sure you want to delete the event '${selected.event.title}'`
@@ -68,7 +65,6 @@ export default function Calendar() {
           <Typography variant="h5">Events</Typography>
           <List>
             {currentEvents.map((event: EventApi) => {
-              console.log("Event: ", event)
               return (
                 <ListItem
                   id={event.id || event._def.publicId}
@@ -77,7 +73,6 @@ export default function Calendar() {
                     m: "10px 0",
                     borderRadius: "2px",
                   }}
-                  // onClick={ (event) => { handleEventClick(event) }}
                 >
                   <ListItemText
                     primary={event.title}
@@ -119,13 +114,15 @@ export default function Calendar() {
             dayMaxEvents={true}
             select={handleDateClick}
             eventClick={handleEventClick}
-            eventsSet={(events) => { console.log("Events Being Added? ", events); setCurrentEvents(events)}}
+            eventsSet={(events) => {
+              setCurrentEvents(events);
+            }}
             initialEvents={[
               {
                 id: "1234",
                 title: "Fuck",
-                date: "2022-11-23"
-              }
+                date: "2022-11-23",
+              },
             ]}
           />
         </Box>
