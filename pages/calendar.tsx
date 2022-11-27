@@ -1,9 +1,12 @@
 import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/core"
+import FullCalendar, {formatDate} from "@fullcalendar/react"
+
+//plugins
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
+
 import {
   Box,
   List,
@@ -15,7 +18,7 @@ import {
 import { tokens } from "../utilities/theme";
 import Header from "../components/header";
 
-export const Calendar = () => {
+export default function Calendar () {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const [ currentEvents, setCurrentEvents] = useState([])
@@ -42,9 +45,55 @@ export const Calendar = () => {
         {/* Calendar Area */}
         <Box>
           {/* Calendar Sidebar */}
+          <Box>
+            <Typography variant="h5">
+              Events
+            </Typography>
+            <List>
+              {currentEvents.map( (event: { id: string, title: string, start: string}) => {
+                return (
+                  <ListItem id={event.id}>
+                    <ListItemText
+                      primary={event.title}
+                      secondary={
+                        <Typography>
+                        {
+                          formatDate(event.start, {
+                            year: "numeric",
+                            month: "short",
+                            day:"numeric"
+                          })
+                        }
+                      </Typography>
+                      } //End Secondary Tag
+                    />
+                  </ListItem>
+                )
+              })}
+            </List>
+          </Box>
         </Box>
         <Box>
           {/* Main Calendar Area */}
+          <FullCalendar
+            height= "75vh"
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin
+            ]}
+            headerToolbar={{
+              left:"prev,next today",
+              center: "title",
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
+            }}
+            initialView="dayGridMonth"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+          />
         </Box>
       </Box>
     </Box>

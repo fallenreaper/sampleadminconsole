@@ -1,4 +1,9 @@
 import "../styles/globals.css";
+// Need to add these css files in order to get FullCalendar to work correctly.
+import '@fullcalendar/common/main.css' // @fullcalendar/react imports @fullcalendar/common
+import '@fullcalendar/daygrid/main.css' // @fullcalendar/timegrid imports @fullcalendar/daygrid
+import '@fullcalendar/timegrid/main.css' // @fullcalendar/timegrid is a direct import
+
 import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache, ThemeProvider } from "@emotion/react";
 import { ColorModeContext, useMode } from "../utilities/theme";
