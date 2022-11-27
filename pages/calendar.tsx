@@ -24,21 +24,32 @@ export default function Calendar() {
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
   const handleDateClick = (selected: any) => {
+    console.log("Selected: ", typeof selected, selected)
     const title = prompt("Enter the Title for your new Event");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
     if (title) {
-      calendarApi.addEvent({
-        id: `${selected.dateStr}-${title}`,
+      const obj = {
+        id: `${selected.startStr}-${title}`,
         title,
-        state: selected.startStr,
+        start: selected.startStr,
         end: selected.endStr,
         allDay: selected.allDay,
-      });
+      }
+      calendarApi.addEvent(obj)
     }
   };
 
-  const handleEventClick = (selected: any) => {};
+  const handleEventClick = (selected: any) => {
+    console.log("Handle Event Click Info: ", typeof selected, selected)
+    if (
+      window.confirm(
+        `Are you sure you want to delete the event '${selected.event.title}'`
+      )
+    ) {
+      selected.event.remove();
+    }
+  };
 
   return (
     <Box m="20px">
@@ -54,18 +65,19 @@ export default function Calendar() {
           borderRadius="4px"
         >
           {/* Calendar Sidebar */}
-          {/* <Box> */}
           <Typography variant="h5">Events</Typography>
           <List>
             {currentEvents.map((event: EventApi) => {
+              console.log("Event: ", event)
               return (
                 <ListItem
-                  id={event.id}
+                  id={event.id || event._def.publicId}
                   sx={{
                     backgroundColor: colors.greenAccent[500],
                     m: "10px 0",
                     borderRadius: "2px",
                   }}
+                  // onClick={ (event) => { handleEventClick(event) }}
                 >
                   <ListItemText
                     primary={event.title}
@@ -84,7 +96,6 @@ export default function Calendar() {
               );
             })}
           </List>
-          {/* </Box> */}
         </Box>
         <Box flex="1 1 100%">
           {/* Main Calendar Area */}
@@ -108,8 +119,14 @@ export default function Calendar() {
             dayMaxEvents={true}
             select={handleDateClick}
             eventClick={handleEventClick}
-            eventsSet={(events) => setCurrentEvents(events)}
-            initialEvents={[]}
+            eventsSet={(events) => { console.log("Events Being Added? ", events); setCurrentEvents(events)}}
+            initialEvents={[
+              {
+                id: "1234",
+                title: "Fuck",
+                date: "2022-11-23"
+              }
+            ]}
           />
         </Box>
       </Box>
