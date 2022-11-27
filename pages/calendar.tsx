@@ -17,16 +17,17 @@ import {
 } from "@mui/material"
 import { tokens } from "../utilities/theme";
 import Header from "../components/header";
+import { EventApi } from "@fullcalendar/common";
 
 export default function Calendar () {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
-  const [ currentEvents, setCurrentEvents] = useState([])
+  const [ currentEvents, setCurrentEvents] = useState<EventApi[]>([])
+  // const setCurrentEvents = (events: any[]) => {_setCurrentEvents(events)}
   const handleDateClick = (selected: any) => {
     const title = prompt("Enter the Title for your new Event")
     const calendarApi = selected.view.calendar;
     calendarApi.unselect()
-
     if (title) {
       calendarApi.addEvent({
         id: `${selected.dateStr}-${title}`,
@@ -37,6 +38,11 @@ export default function Calendar () {
       })
     }
   }
+
+  const handleEventClick = (selected: any) => {
+    
+  }
+
 
   return (
     <Box m="20px">
@@ -50,7 +56,7 @@ export default function Calendar () {
               Events
             </Typography>
             <List>
-              {currentEvents.map( (event: { id: string, title: string, start: string}) => {
+              {currentEvents.map( (event: EventApi) => {
                 return (
                   <ListItem id={event.id}>
                     <ListItemText
@@ -58,7 +64,7 @@ export default function Calendar () {
                       secondary={
                         <Typography>
                         {
-                          formatDate(event.start, {
+                          event.start && formatDate(event.start, {
                             year: "numeric",
                             month: "short",
                             day:"numeric"
@@ -93,6 +99,13 @@ export default function Calendar () {
             selectable={true}
             selectMirror={true}
             dayMaxEvents={true}
+            select={handleDateClick}
+            eventClick={handleEventClick}
+            eventsSet={ (events) => setCurrentEvents(events) }
+            initialEvents={
+              []
+            }
+
           />
         </Box>
       </Box>
