@@ -14,27 +14,27 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         axis: {
           domain: {
             line: {
-              stroke: colors.grey[100],
+              stroke: colors.grey[900],
             },
           },
           legend: {
             text: {
-              fill: colors.grey[100],
+              fill: colors.grey[900],
             },
           },
           ticks: {
             line: {
-              stroke: colors.grey[100],
+              stroke: colors.grey[900],
               strokeWidth: 1,
             },
             text: {
-              fill: colors.grey[100],
+              fill: colors.grey[900],
             },
           },
         },
         legends: {
           text: {
-            fill: colors.grey[100],
+            fill: colors.grey[900],
           },
         },
         tooltip: {
@@ -58,7 +58,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
       axisTop={null}
       axisRight={null}
       axisBottom={{
-        // orient: "bottom",
+        // orient: "bottom",  // Seems that 'orient' doesnt exist in 'AxisProps'
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
@@ -67,7 +67,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         legendPosition: "middle",
       }}
       axisLeft={{
-        // orient: "left",
+        // orient: "left" ,   // Seems that 'orient' doesnt exist in 'AxisProps'   
         tickValues: 5, // added
         tickSize: 3,
         tickPadding: 5,
