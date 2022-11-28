@@ -2,9 +2,7 @@ import { Box } from "@mui/material";
 import Header from "../components/header";
 import BarChart from "../components/bar";
 
-
 const Bar = () => {
-
   return (
     <Box m="20px">
       <Header title="Bar Chart" subtitle="Simple Bar Chart" />
@@ -12,7 +10,7 @@ const Bar = () => {
         <BarChart />
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Bar
+export default Bar;

@@ -67,7 +67,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         legendPosition: "middle",
       }}
       axisLeft={{
-        // orient: "left" ,   // Seems that 'orient' doesnt exist in 'AxisProps'   
+        // orient: "left" ,   // Seems that 'orient' doesnt exist in 'AxisProps'
         tickValues: 5, // added
         tickSize: 3,
         tickPadding: 5,

@@ -2,9 +2,7 @@ import { Box } from "@mui/material";
 import Header from "../components/header";
 import LineChart from "../components/line";
 
-
 const Line = () => {
-
   return (
     <Box m="20px">
       <Header title="Line Chart" subtitle="Simple Line Chart" />
@@ -12,7 +10,7 @@ const Line = () => {
         <LineChart />
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Line
+export default Line;

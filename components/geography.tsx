@@ -39,9 +39,9 @@ const GeographyChart = ({ isDashboard = false }) => {
         },
         tooltip: {
           container: {
-            color: colors.grey[100]
-          }
-        }
+            color: colors.grey[100],
+          },
+        },
       }}
       features={geoFeatures.features}
       margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
