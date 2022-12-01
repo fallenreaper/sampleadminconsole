@@ -148,12 +148,11 @@ const Dashboard = () => {
               <Typography
                 variant="h3"
                 fontWeight="bold"
-                color={colors.greenAccent[400]}
+                color={colors.greenAccent[500]}
               >
                 $59,342.32
               </Typography>
-            </Box>{" "}
-            {/* [TODO] Continue Here for Dashboard creation. */}
+            </Box>
             <Box>
               <IconButton>
                 <DownloadOutlinedIcon
@@ -171,6 +170,7 @@ const Dashboard = () => {
           gridRow="span 2"
           sx={{ backgroundColor: colors.primary[600] }}
           overflow="auto"
+          height="304px"
         >
           <Box
             display="flex"
