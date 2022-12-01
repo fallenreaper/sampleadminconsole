@@ -77,7 +77,7 @@ const Dashboard = () => {
           <StatBox
             title="431,225"
             subtitle="Sales Obtained"
-            progress={0.50}
+            progress={0.5}
             increase="+21%"
             icon={
               <PointOfSaleIcon
@@ -96,7 +96,7 @@ const Dashboard = () => {
           <StatBox
             title="32,441"
             subtitle="New Clients"
-            progress={0.30}
+            progress={0.3}
             increase="+5%"
             icon={
               <PersonAddIcon
@@ -115,7 +115,7 @@ const Dashboard = () => {
           <StatBox
             title="1,325,134"
             subtitle="Traffic Received"
-            progress={0.80}
+            progress={0.8}
             increase="+43%"
             icon={
               <TrafficIcon
@@ -124,7 +124,6 @@ const Dashboard = () => {
             }
           />
         </Box>
-
         {/* Second Row of Items */}
         <Box
           gridColumn="span 8"
@@ -214,16 +213,27 @@ const Dashboard = () => {
               </Box>
             </Box>
           ))}
-        </Box> {/* End of Row 2. */}
-        <Box gridColumn="span 4"
+        </Box>{" "}
+        {/* End of Row 2. */}
+        <Box
+          gridColumn="span 4"
           gridRow="span 2"
-          sx={{backgroundColor: colors.primary[600]}}
+          sx={{ backgroundColor: colors.primary[600] }}
           p="30px"
         >
           <Typography>Campaign</Typography>
-          <Box display="flex" flexDirection="column" alignItems="center" mt="25px">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
             <ProgressCircle size={125} />
-            <Typography variant="h5" color={colors.greenAccent[500]} sx={{mt:"15px"}}>
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+              sx={{ mt: "15px" }}
+            >
               $48,352 revenue generated
             </Typography>
             <Typography>Includes extra misc expenses and costs.</Typography>
@@ -232,7 +242,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          sx={{backgroundColor:colors.primary[600]}}
+          sx={{ backgroundColor: colors.primary[600] }}
         >
           <Typography
             variant="h5"
@@ -248,7 +258,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          sx={{backgroundColor:colors.primary[600]}}
+          sx={{ backgroundColor: colors.primary[600] }}
           p="30px"
         >
           <Typography
