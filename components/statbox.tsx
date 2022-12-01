@@ -6,24 +6,17 @@ function StatBox({
   title,
   subtitle,
   icon,
-  progress,
+  progress = 0,
   increase,
 }: {
-  title: string;
-  subtitle: string;
-  icon: any;
-  progress: string;
-  increase: string;
+  title?: string;
+  subtitle?: string;
+  icon?: any;
+  progress?: number;
+  increase?: string;
 }) {
-  let _progress = 0;
-  try {
-    _progress = parseFloat(progress);
-  } catch (e) {
-    console.log("Failed to Parse `progress` to number.  Defaulting to `0`");
-  }
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const angle = _progress * 360;
 
   return (
     <Box width="100%" m="0 30px">
@@ -39,7 +32,7 @@ function StatBox({
           </Typography>
         </Box>
         <Box>
-          <ProgressCircle progress={_progress} />
+          <ProgressCircle progress={progress} />
         </Box>
 
         <Box display="flex" justifyContent="space-between">
