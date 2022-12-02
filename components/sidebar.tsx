@@ -106,12 +106,12 @@ const SideBar = () => {
                 <Image
                   alt="profile-user"
                   src={`/images/profile.jpg`}
+                  width={100}
+                  height={100}
                   style={{
                     cursor: "pointer",
                     borderRadius: "50%",
-                    height: "100px",
-                    width: "100px",
-                  }} // Even though it has a width and height, i wanted to keep styles together.
+                  }}
                 />
               </Box>
 
