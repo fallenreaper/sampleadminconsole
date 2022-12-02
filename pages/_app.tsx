@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 // Need to add these css files in order to get FullCalendar to work correctly.
-import '@fullcalendar/common/main.css' // @fullcalendar/react imports @fullcalendar/common
-import '@fullcalendar/daygrid/main.css' // @fullcalendar/timegrid imports @fullcalendar/daygrid
-import '@fullcalendar/timegrid/main.css' // @fullcalendar/timegrid is a direct import
+import "@fullcalendar/common/main.css"; // @fullcalendar/react imports @fullcalendar/common
+import "@fullcalendar/daygrid/main.css"; // @fullcalendar/timegrid imports @fullcalendar/daygrid
+import "@fullcalendar/timegrid/main.css"; // @fullcalendar/timegrid is a direct import
 
 import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache, ThemeProvider } from "@emotion/react";
@@ -12,7 +12,7 @@ import { CssBaseline } from "@mui/material";
 import createEmotionCache from "../utilities/createEmotionCache";
 import TopBar from "../components/topbar";
 import SideBar from "../components/sidebar";
-import { ProSidebarProvider} from "react-pro-sidebar"
+import { ProSidebarProvider } from "react-pro-sidebar";
 import { useState } from "react";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -35,7 +35,7 @@ export default function App(props: MyAppProps) {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <div className="app">
-              <SideBar/>
+              <SideBar />
               <main className="content">
                 <TopBar />
                 <Component {...pageProps} />

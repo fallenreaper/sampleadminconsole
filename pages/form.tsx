@@ -12,12 +12,12 @@ const phoneRegex =
   /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 interface MyFormProps {
-  firstName: string,
-  lastName: string,
-  email: string,
-  contact: string,
-  address1: string,
-  address2: string,
+  firstName: string;
+  lastName: string;
+  email: string;
+  contact: string;
+  address1: string;
+  address2: string;
 }
 
 const initialValues: MyFormProps = {
@@ -45,7 +45,7 @@ const Form = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const handleFormSumbit = (values: any) => {
     console.log("Values : ", values);
-    console.log("We will conduct Save Action with this data...")
+    console.log("We will conduct Save Action with this data...");
   };
   return (
     <Box m="20px">
@@ -82,12 +82,12 @@ const Form = () => {
                   label="First Name"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  name= "firstName"
+                  name="firstName"
                   value={values.firstName}
                   error={!!touched.firstName && !!errors.firstName}
                   helperText={touched.firstName && errors.firstName}
                   sx={{
-                    gridColumn: "span 2"
+                    gridColumn: "span 2",
                   }}
                 />
                 <TextField
@@ -100,9 +100,9 @@ const Form = () => {
                   name="lastName"
                   value={values.lastName}
                   error={!!touched.lastName && !!errors.lastName}
-                  helperText={touched.lastName && errors.lastName }
+                  helperText={touched.lastName && errors.lastName}
                   sx={{
-                    gridColumn: "span 2"
+                    gridColumn: "span 2",
                   }}
                 />
                 <TextField
@@ -115,9 +115,9 @@ const Form = () => {
                   name="email"
                   value={values.email}
                   error={!!touched.email && !!errors.email}
-                  helperText={touched.email && errors.email }
+                  helperText={touched.email && errors.email}
                   sx={{
-                    gridColumn: "span 4"
+                    gridColumn: "span 4",
                   }}
                 />
                 <TextField
@@ -130,9 +130,9 @@ const Form = () => {
                   name="contact"
                   value={values.contact}
                   error={!!touched.contact && !!errors.contact}
-                  helperText={touched.contact && errors.contact }
+                  helperText={touched.contact && errors.contact}
                   sx={{
-                    gridColumn: "span 4"
+                    gridColumn: "span 4",
                   }}
                 />
                 <TextField
@@ -145,9 +145,9 @@ const Form = () => {
                   name="address1"
                   value={values.address1}
                   error={!!touched.address1 && !!errors.address1}
-                  helperText={touched.address1 && errors.address1 }
+                  helperText={touched.address1 && errors.address1}
                   sx={{
-                    gridColumn: "span 4"
+                    gridColumn: "span 4",
                   }}
                 />
                 <TextField
@@ -160,18 +160,14 @@ const Form = () => {
                   name="address2"
                   value={values.address2}
                   error={!!touched.address2 && !!errors.address2}
-                  helperText={touched.address2 && errors.address2 }
+                  helperText={touched.address2 && errors.address2}
                   sx={{
-                    gridColumn: "span 4"
+                    gridColumn: "span 4",
                   }}
                 />
               </Box>
               <Box display="flex" justifyContent="end" mt="20px">
-                <Button 
-                  type="submit"
-                  variant="contained"
-                  color="secondary"
-                >
+                <Button type="submit" variant="contained" color="secondary">
                   Create New User
                 </Button>
               </Box>

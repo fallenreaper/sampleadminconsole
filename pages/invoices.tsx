@@ -34,19 +34,19 @@ export default function Invoices() {
       headerName: "Cost",
       flex: 1,
       renderCell: (params) => {
-        console.log(typeof params, params)
+        console.log(typeof params, params);
         return (
-        <Typography color={colors.greenAccent[500]}>
-          ${params.row.cost}
-        </Typography>
-        )
-      }
+          <Typography color={colors.greenAccent[500]}>
+            ${params.row.cost}
+          </Typography>
+        );
+      },
     },
     {
       field: "date",
       headerName: "Date",
       flex: 1,
-    }
+    },
   ];
 
   return (
@@ -77,14 +77,14 @@ export default function Invoices() {
             backgroundColor: colors.blueAccent[300],
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${colors.grey[900]} !important`
+            color: `${colors.grey[900]} !important`,
           },
-          "& .MuiCheckbox-root" : {
-            color: `${colors.greenAccent[800]} !important`
-          }
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[800]} !important`,
+          },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns}  />
+        <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
       </Box>
     </Box>
   );

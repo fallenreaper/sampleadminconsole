@@ -27,7 +27,7 @@ const Item = (obj: {
 }) => {
   const { title, to, icon, selected, setSelected } = obj;
   const theme = useTheme();
-  
+
   /*
   I needed to look and the DOCs for link and use the Legacy Behavior and passHref to accomplish i was looking for.
   Also noting:  Link prefetching doesnt work for dev builds, so if you want to confirm it, you would want to run and start a prod version. `npm run build && npm run start`
@@ -106,7 +106,12 @@ const SideBar = () => {
                 <Image
                   alt="profile-user"
                   src={`/images/profile.jpg`}
-                  style={{ cursor: "pointer", borderRadius: "50%", height: "100px", width: "100px" }} // Even though it has a width and height, i wanted to keep styles together.
+                  style={{
+                    cursor: "pointer",
+                    borderRadius: "50%",
+                    height: "100px",
+                    width: "100px",
+                  }} // Even though it has a width and height, i wanted to keep styles together.
                 />
               </Box>
 

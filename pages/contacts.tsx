@@ -12,11 +12,11 @@ export default function Contacts() {
     {
       field: "id",
       headerName: "ID",
-      flex: 0.5
+      flex: 0.5,
     },
     {
-      field: 'registrarId',
-      headerName: 'Registrar ID'
+      field: "registrarId",
+      headerName: "Registrar ID",
     },
     {
       field: "name",
@@ -55,12 +55,15 @@ export default function Contacts() {
       field: "zipCode",
       headerName: "Zip Code",
       flex: 1,
-    }
+    },
   ];
 
   return (
     <Box m="20px">
-      <Header title="CONTACTS" subtitle="List of Contacts for Future References" />
+      <Header
+        title="CONTACTS"
+        subtitle="List of Contacts for Future References"
+      />
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -86,11 +89,16 @@ export default function Contacts() {
             backgroundColor: colors.blueAccent[300],
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${colors.grey[900]} !important`
-          }
+            color: `${colors.grey[900]} !important`,
+          },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataContacts} columns={columns} components={{ Toolbar: GridToolbar}}  />
+        <DataGrid
+          checkboxSelection
+          rows={mockDataContacts}
+          columns={columns}
+          components={{ Toolbar: GridToolbar }}
+        />
       </Box>
     </Box>
   );

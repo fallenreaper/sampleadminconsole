@@ -103,9 +103,9 @@ export default function Calendar() {
               listPlugin,
             ]}
             headerToolbar={{
-              left: "prev,next today",  // Spaces have meaning.
+              left: "prev,next today", // Spaces have meaning.
               center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",  // Cant have spaces
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth", // Cant have spaces
             }}
             initialView="dayGridMonth"
             editable={true}

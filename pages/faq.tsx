@@ -1,16 +1,16 @@
-import { Box , useTheme, Typography} from "@mui/material"
-import Header from "../components/header"
-import Accordion from "@mui/material/Accordion"
-import AccordionSummary from "@mui/material/AccordionSummary"
-import AccordionDetails from "@mui/material/AccordionDetails"
-import ExpandMoreIcon from "@mui/icons-material/ExpandMoreOutlined"
-import { tokens } from "../utilities/theme"
+import { Box, useTheme, Typography } from "@mui/material";
+import Header from "../components/header";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMoreOutlined";
+import { tokens } from "../utilities/theme";
 
 const FAQ = () => {
-  const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-  return(
+  return (
     <Box m="20px">
       <Header title="FAQ" subtitle="Frequently Asked Questions" />
 
@@ -21,9 +21,7 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          This is some sample info 1
-          </Typography>
+          <Typography>This is some sample info 1</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
@@ -33,9 +31,7 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          This is some sample info 1asdf
-          </Typography>
+          <Typography>This is some sample info 1asdf</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
@@ -45,9 +41,7 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          This is some sample info 3
-          </Typography>
+          <Typography>This is some sample info 3</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
@@ -57,9 +51,7 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          This is some sample info 3
-          </Typography>
+          <Typography>This is some sample info 3</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
@@ -69,14 +61,11 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          This is some sample info 4
-          </Typography>
+          <Typography>This is some sample info 4</Typography>
         </AccordionDetails>
       </Accordion>
-
     </Box>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;
