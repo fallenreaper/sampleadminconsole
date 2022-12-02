@@ -67,7 +67,7 @@ export default function Calendar() {
             {currentEvents.map((event: EventApi) => {
               return (
                 <ListItem
-                  id={event.id || event._def.publicId}
+                  key={event.id || event._def.publicId}
                   sx={{
                     backgroundColor: colors.greenAccent[500],
                     m: "10px 0",

@@ -16,6 +16,7 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import Image from "next/image";
 
 const Item = (obj: {
   title: string;
@@ -26,11 +27,10 @@ const Item = (obj: {
 }) => {
   const { title, to, icon, selected, setSelected } = obj;
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  /*
-  [TODO]   Adding the Link as a wrapper to the MenuItem, will create a Hydration Error for react/link and MenuItem.
-  I will need to do more searching.  The Error will deferr to clientside rendering and pretty much recognizes that the Client and Server Templates are out of sync.
   
+  /*
+  I needed to look and the DOCs for link and use the Legacy Behavior and passHref to accomplish i was looking for.
+  Also noting:  Link prefetching doesnt work for dev builds, so if you want to confirm it, you would want to run and start a prod version. `npm run build && npm run start`
   */
   return (
     <Link href={to} passHref legacyBehavior>
@@ -103,12 +103,10 @@ const SideBar = () => {
           {!isCollapsed && (
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
-                <img
+                <Image
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
                   src={`/images/profile.jpg`}
-                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                  style={{ cursor: "pointer", borderRadius: "50%", height: "100px", width: "100px" }} // Even though it has a width and height, i wanted to keep styles together.
                 />
               </Box>
 
