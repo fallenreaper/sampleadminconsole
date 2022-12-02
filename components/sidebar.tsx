@@ -33,7 +33,7 @@ const Item = (obj: {
   
   */
   return (
-    <Link href={to} passHref style={{ color: colors.grey[900], textDecoration: "none" }}>
+    <Link href={to} passHref legacyBehavior>
       <MenuItem
         active={selected === title}
         onClick={() => setSelected(title)}
